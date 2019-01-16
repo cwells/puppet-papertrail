@@ -1,12 +1,3 @@
-<%
-@files = @files.map do |file|
-  if file.is_a?(Hash)
-    { 'path' => file['path'], 'tag' => file['tag'] }
-  else
-    file
-  end
-end
-%>
 <%= { 'files' => @files }.to_yaml.sub("---\n", '') %>
 
 <% if !@hostname.nil? -%>
